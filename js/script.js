@@ -42,9 +42,31 @@ createApp({
         }
 
         
+    },
+    methods: {
+        buttonNext(){
+
+            this.activeItem++;
+
+            if(this.activeItem > this.slides.length - 1){
+
+                this.activeItem = 0;
+
+            }
+        },
+
+        buttonPrev(){
+            this.activeItem--;
+
+            if(this.activeItem < 0){
+
+                this.activeItem = this.slides.length - 1;
+
+            }
+
+        }
     }
 
 
 }).mount('#app')
 
-console.log(this.slides);
